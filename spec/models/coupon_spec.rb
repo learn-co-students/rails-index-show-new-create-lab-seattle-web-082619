@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-describe Coupon do
-  before(:each) do
-    @coupon = Coupon.create!(coupon_code: "FREESTUFF", store: "Chipotle")
+RSpec.describe Coupon, type: :model do
+  it "is valid with no attributes" do
+    expect(Coupon.new).to be_valid
   end
-
-  it 'can be created' do
-    expect(@coupon).to be_valid
+  it "is valid with valid attributes" do
+    expect(Coupon.new(coupon_code: 'Anything', store:'Anything')).to be_valid
   end
 end
