@@ -1,0 +1,10 @@
+<h1>index page!</h1>
+
+<%@coupons.each_with_index do |coupon, index|%>
+    <h3> 
+        <%= link_to ("Coupon " + (index + 1).to_s + ":"), coupon_path(coupon.id) %> 
+    </h3>
+    <p> Store: <%= coupon.store %> </p>
+    <p> Code: <%= coupon.coupon_code %> </p>
+    <hr>
+<% end %>
